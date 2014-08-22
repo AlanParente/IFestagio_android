@@ -1253,7 +1253,7 @@ containing a value of this type.
         public static final int hello_world=0x7f0a000e;
         public static final int sem_conta=0x7f0a0013;
         public static final int senha=0x7f0a0010;
-        public static final int usuário=0x7f0a0011;
+        public static final int usuario=0x7f0a0011;
     }
     public static final class style {
         /** 
