@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:hint="@string/usuario"
+        android:hint="@string/usuarioHint"
         android:inputType="textEmailAddress" />
 
     <Button
