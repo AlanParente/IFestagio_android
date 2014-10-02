@@ -1,7 +1,6 @@
 package com.example.estagio;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,35 +10,56 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
-import android.os.Build;
-
-
 
 public class MainActivity extends ActionBarActivity {
 
+	private Button myButton;
+	private EditText  username=null;
+	private EditText  password=null;
+	int counter = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setContentView(R.layout.fragment_main);
         
-        Button myButton;
+//        Button myButton;
+        username = (EditText)findViewById(R.id.editText1);
+        password = (EditText)findViewById(R.id.editText2);
         myButton = (Button) findViewById(R.id.button1);
-        while(myButton == null){
-			myButton = (Button) findViewById(R.id.button1);
-		}
-        
-        myButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
-            	MainActivity.this.startActivity(myIntent);
-            	finish();
-	      	}
-   		});
-        
+//        while(myButton == null){
+//			myButton = (Button) findViewById(R.id.button1);
+//		}
+//        
+//        myButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//            	Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
+//            	MainActivity.this.startActivity(myIntent);
+//            	finish();
+//	      	}
+//   		});
     }
-
+    
+    public void login(View view)
+    {
+        if(username.getText().toString().equals("admin") && 
+        		password.getText().toString().equals("admin"))
+        {
+	        Toast.makeText(getApplicationContext(), "Redireionando...",Toast.LENGTH_SHORT).show();
+	        Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
+	    	MainActivity.this.startActivity(myIntent);
+	    	finish();
+        }	
+        else{
+	        Toast.makeText(getApplicationContext(), "Credenciais erradas!",Toast.LENGTH_SHORT).show();
+	        counter--;
+	        if(counter==0){
+	           myButton.setEnabled(false);
+	        }
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

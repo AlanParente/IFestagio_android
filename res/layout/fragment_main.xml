@@ -26,6 +26,7 @@
         android:layout_below="@+id/editText2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
+        android:onClick="login"
         android:text="@string/acessar" />
 
     <EditText
