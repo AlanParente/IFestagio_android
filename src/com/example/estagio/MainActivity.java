@@ -25,23 +25,12 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         setContentView(R.layout.fragment_main);
         
-//        Button myButton;
         username = (EditText)findViewById(R.id.editText1);
         password = (EditText)findViewById(R.id.editText2);
         myButton = (Button) findViewById(R.id.button1);
-//        while(myButton == null){
-//			myButton = (Button) findViewById(R.id.button1);
-//		}
-//        
-//        myButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//            	Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
-//            	MainActivity.this.startActivity(myIntent);
-//            	finish();
-//	      	}
-//   		});
     }
     
+    // Trata o Botão "Acessar" da tela inicial
     public void login(View view)
     {
         if(username.getText().toString().equals("admin") && 
