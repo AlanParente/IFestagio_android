@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class DummySwipe extends ActionBarActivity implements SimpleGestureListener{
@@ -15,12 +18,17 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 	 * 
 	 */
 	private FiltroDeGestos listener;
+	/**
+	 * Referência da TextView
+	 */
+	private TextView myTv;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dummy_swipe);
 		listener = new FiltroDeGestos(this, this);
+		myTv = (TextView) findViewById(R.id.texto);
 	}
 	
 	/**
@@ -67,10 +75,18 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 	      
 	      	case FiltroDeGestos.SWIPE_RIGHT: 
 	      		str = "Swipe Right";
-	            break;
+	      		/**
+	      		 * Seta a animação de "saída pela direita".
+	      		 */
+	      		myTv.setAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right));
+	      		break;
 	      	case FiltroDeGestos.SWIPE_LEFT:  
 	      		str = "Swipe Left";
-	            break;
+	      		/**
+	      		 * Seta a animação de "saída pela esquerda".
+	      		 */
+	      		myTv.setAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_out_left));
+	      		break;
 	      	case FiltroDeGestos.SWIPE_DOWN:  
 	      		str = "Swipe Down";
 	            break;
@@ -79,6 +95,11 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 	            break;
 	      }
 	       Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+	       /**
+	        * Mostra animação e deixa a View invisível.
+	        */
+	       myTv.startAnimation(myTv.getAnimation());
+     	   myTv.setVisibility(View.GONE);
 	 }
 		
 	/**
@@ -87,6 +108,10 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 	@Override
 	public void onDoubleTap() 
 	{
+		/**
+		 * Deixa a View visível novamente.
+		 */
+		myTv.setVisibility(View.VISIBLE);
 		Toast.makeText(this, "Double Tap", Toast.LENGTH_SHORT).show();
 		
 	}
