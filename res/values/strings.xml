@@ -10,5 +10,6 @@
     <string name="sem_conta">Não tem uma conta?</string>
     <string name="usuarioHint">Usuario</string>
     <string name="title_activity_tab">TabActivity</string>
+        <string name="image">Thumbnail</string>
 
 </resources>
