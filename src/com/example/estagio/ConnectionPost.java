@@ -7,15 +7,16 @@ import java.sql.Connection;
 
 
 public abstract class ConnectionPost {
-	private static final String DATABASE_URL = "jdbc:postgresql://localhost/postgres";
+	private static final String DATABASE_URL = "jdbc:postgresql//127.0.0.1:5432/postgres";
     private static final String USERNAME = "postgres";
     private static final String PASSWORD = "ifestagio";
     
-    public ConnectionPost getConnection() {
-        ConnectionPost con = null;
+    
+    public Connection getConnection() {
+        Connection con = null;
         try {
             Class.forName("org.postgresql.Driver");
-            con =  (ConnectionPost) DriverManager.getConnection(DATABASE_URL, USERNAME,
+            con =   DriverManager.getConnection(DATABASE_URL, USERNAME,
                     PASSWORD);
         } catch (Exception e) {
             System.out.println("Não foi possível se conectar ao banco.");
@@ -33,18 +34,18 @@ public abstract class ConnectionPost {
         }
        }
 
-       public void closeConnection(ConnectionPost conec, Statement stat) {
+       public void closeConnection(Connection conec, Statement stat) {
         try {
-            close((Connection) conec, stat, null);
+            close( conec, stat, null);
         } catch (Exception e) {
             System.out.println("Não foi possível se encerrar conexão com o banco.");
             e.printStackTrace();
         }
        }
 
-       public void closeConnection(ConnectionPost conec) {
+       public void closeConnection(Connection conec) {
         try {
-            close((Connection) conec, null, null);
+            close( conec, null, null);
         } catch (Exception e) {
             System.out.println("Não foi possível se encerrar conexão com o banco.");
             e.printStackTrace();

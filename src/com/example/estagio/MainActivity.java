@@ -1,5 +1,8 @@
 package com.example.estagio;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
@@ -31,15 +34,16 @@ public class MainActivity extends ActionBarActivity {
     }
     
     // Trata o Botão "Acessar" da tela inicial
-    public void login(View view)
-    {
+    public void login(View view) throws SQLException
+    {   
         if(username.getText().toString().equals("admin") && 
         		password.getText().toString().equals("admin"))
-        {
-	        Toast.makeText(getApplicationContext(), "Redireionando...",Toast.LENGTH_SHORT).show();
+	        {
+        	Toast.makeText(getApplicationContext(), "Redireionando...",Toast.LENGTH_SHORT).show();
 	        Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
 	    	MainActivity.this.startActivity(myIntent);
 	    	finish();
+	    	
         }	
         else{
 	        Toast.makeText(getApplicationContext(), "Credenciais erradas!",Toast.LENGTH_SHORT).show();

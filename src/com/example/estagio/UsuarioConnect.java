@@ -14,12 +14,12 @@ public class UsuarioConnect extends ConnectionPost {
 	     Connection conn = null;
 	     ResultSet resultSet = null;
 	     PreparedStatement stmt = null;
-	     conn = (Connection) getConnection();
+	     conn =  getConnection();
 	     ArrayList<Usuario> listaUsuario = null;
 
 	     try {
 
-	         stmt = conn.prepareStatement("SELECT * FROM TAB_USUARIO WHERE USUARIO = ?");
+	         stmt = conn.prepareStatement("SELECT * FROM tab_usuario WHERE usuario = ?");
 	         resultSet = stmt.executeQuery();
 	         listaUsuario = new ArrayList<Usuario>();
 
