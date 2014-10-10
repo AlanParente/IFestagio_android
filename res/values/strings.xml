@@ -5,10 +5,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="senha">Senha</string>
-    
     <string name="acessar">Acessar</string>
     <string name="sem_conta">Não tem uma conta?</string>
     <string name="usuarioHint">Usuario</string>
     <string name="title_activity_tab">TabActivity</string>
+    <string name="title_activity_dummy_swipe">DummySwipe</string>
 
 </resources>

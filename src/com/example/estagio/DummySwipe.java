@@ -3,12 +3,22 @@ package com.example.estagio;
 import com.example.estagio.FiltroDeGestos.SimpleGestureListener;
 
 import android.support.v7.app.ActionBarActivity;
+import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup.MarginLayoutParams;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,14 +31,23 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 	/**
 	 * Referência da TextView
 	 */
-	private TextView myTv;
+	//private TextView myTv;
+	private ImageButton check;
+	private ImageButton refuse;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dummy_swipe);
 		listener = new FiltroDeGestos(this, this);
-		myTv = (TextView) findViewById(R.id.texto);
+		//myTv = (TextView) findViewById(R.id.texto);
+		//myTv.setText("");
+		check = (ImageButton) findViewById(R.id.checkView);
+		refuse = (ImageButton) findViewById(R.id.refuseView);
+		check.setColorFilter(Color.GREEN);
+		refuse.setColorFilter(Color.RED);
+		
 	}
 	
 	/**
@@ -78,14 +97,18 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 	      		/**
 	      		 * Seta a animação de "saída pela direita".
 	      		 */
-	      		myTv.setAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right));
+	      		check.setAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_out));
+	      		check.startAnimation(check.getAnimation());
+	      		check.setVisibility(View.GONE);
 	      		break;
 	      	case FiltroDeGestos.SWIPE_LEFT:  
 	      		str = "Swipe Left";
 	      		/**
 	      		 * Seta a animação de "saída pela esquerda".
 	      		 */
-	      		myTv.setAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_out_left));
+	      		refuse.setAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_out));
+	      		refuse.startAnimation(refuse.getAnimation());
+	      		refuse.setVisibility(View.GONE);
 	      		break;
 	      	case FiltroDeGestos.SWIPE_DOWN:  
 	      		str = "Swipe Down";
@@ -95,11 +118,7 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 	            break;
 	      }
 	       Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
-	       /**
-	        * Mostra animação e deixa a View invisível.
-	        */
-	       myTv.startAnimation(myTv.getAnimation());
-     	   myTv.setVisibility(View.GONE);
+	       
 	 }
 		
 	/**
@@ -111,7 +130,9 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 		/**
 		 * Deixa a View visível novamente.
 		 */
-		myTv.setVisibility(View.VISIBLE);
+		check.setVisibility(View.VISIBLE);
+		refuse.setVisibility(View.VISIBLE);
+		
 		Toast.makeText(this, "Double Tap", Toast.LENGTH_SHORT).show();
 		
 	}
