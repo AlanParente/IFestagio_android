@@ -46,8 +46,7 @@ public class MainActivity extends ActionBarActivity {
 	    	
         }	
         else{
-        	UsuarioConnect uc = new UsuarioConnect();
-        	System.out.println(uc.busca("admin"));
+        	
 	        Toast.makeText(getApplicationContext(), "Credenciais erradas!",Toast.LENGTH_SHORT).show();
 	        counter--;
 	        if(counter==0){
