@@ -34,6 +34,8 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 	//private TextView myTv;
 	private ImageButton check;
 	private ImageButton refuse;
+	private ImageButton info;
+	private static int imgcolor;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -43,10 +45,14 @@ public class DummySwipe extends ActionBarActivity implements SimpleGestureListen
 		listener = new FiltroDeGestos(this, this);
 		//myTv = (TextView) findViewById(R.id.texto);
 		//myTv.setText("");
-		check = (ImageButton) findViewById(R.id.checkView);
-		refuse = (ImageButton) findViewById(R.id.refuseView);
-		check.setColorFilter(Color.GREEN);
-		refuse.setColorFilter(Color.RED);
+		check = (ImageButton) findViewById(R.id.checkButton);
+		refuse = (ImageButton) findViewById(R.id.refuseButton);
+		info = (ImageButton) findViewById(R.id.infoButton);
+		imgcolor = Color.rgb(102, 102, 102);
+		check.setColorFilter(imgcolor);
+		refuse.setColorFilter(imgcolor);
+		info.setColorFilter(imgcolor);
+		
 		
 	}
 	
