@@ -41,7 +41,7 @@
         android:inputType="textPassword" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/infoTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
@@ -54,8 +54,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editText1"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignRight="@+id/textView1"
+        android:layout_alignLeft="@+id/infoTxt"
+        android:layout_alignRight="@+id/infoTxt"
         android:src="@drawable/ifce_logo" />
 
 </RelativeLayout>

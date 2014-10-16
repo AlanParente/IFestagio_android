@@ -7,13 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class OfertasFragment extends Fragment {
-	
 	@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
- 
-        View rootView = inflater.inflate(R.layout.ofertas_fragment, container, false);
-         
-        return rootView;
-    }
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View rootView = inflater.inflate(R.layout.ofertas_activity, container,
+				false);
+		return rootView;
+	}
 }

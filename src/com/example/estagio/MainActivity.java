@@ -37,8 +37,8 @@ public class MainActivity extends ActionBarActivity {
         		password.getText().toString().equals("admin"))
         {
 	        Toast.makeText(getApplicationContext(), "Redirecionando...",Toast.LENGTH_SHORT).show();
-	        //Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
-	        Intent myIntent = new Intent(MainActivity.this, DummySwipe.class);
+	        Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
+	        //Intent myIntent = new Intent(MainActivity.this, OfertasActivity.class);
 	    	MainActivity.this.startActivity(myIntent);
 	    	finish();
         }	
