@@ -32,15 +32,15 @@ public class MainActivity extends ActionBarActivity {
         password = (EditText)findViewById(R.id.editText2);
         myButton = (Button) findViewById(R.id.button1);
     }
-    
-    // Trata o Botão "Acessar" da tela inicial
-    public void login(View view) throws SQLException
-    {   
+    // Trata o Botï¿½o "Acessar" da tela inicial
+    public void login(View view)
+    {
         if(username.getText().toString().equals("admin") && 
         		password.getText().toString().equals("admin"))
-	        {
-        	Toast.makeText(getApplicationContext(), "Redireionando...",Toast.LENGTH_SHORT).show();
+        {
+	        Toast.makeText(getApplicationContext(), "Redirecionando...",Toast.LENGTH_SHORT).show();
 	        Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
+	        //Intent myIntent = new Intent(MainActivity.this, OfertasActivity.class);
 	    	MainActivity.this.startActivity(myIntent);
 	    	finish();
 	    	
