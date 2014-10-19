@@ -8,11 +8,11 @@
           TABLE USUARIO (ID INTEGER PRIMARY KEY AUTOINCREMENT, LOGIN TEXT, SENHA TEXT);</string> 
    <string name="Banco_onUpgrade">" DROP TABLE IF EXISTS USUARIO</string> 
     <string name="senha">Senha</string>
-    
     <string name="acessar">Acessar</string>
     <string name="sem_conta">Não tem uma conta?</string>
     <string name="usuarioHint">Usuario</string>
     <string name="title_activity_tab">TabActivity</string>
-        <string name="image">Thumbnail</string>
+
+    <string name="title_activity_dummy_swipe">DummySwipe</string>
 
 </resources>
