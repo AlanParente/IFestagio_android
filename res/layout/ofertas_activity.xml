@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.estagio.Ofertas" >
+    tools:context="com.example.estagio.OfertasActivity" >
 
     <ImageButton
         android:id="@+id/checkButton"
@@ -34,6 +34,7 @@
         android:maxWidth="50dp"
         android:padding="5dp"
         android:scaleType="centerInside"
+        android:onClick="onInfoButtonClick"
         android:src="@drawable/info" />
 
     <ImageButton
@@ -82,5 +83,12 @@
         android:layout_marginBottom="33dp"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/descriptionTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/refuseButton"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
