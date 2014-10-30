@@ -40,11 +40,12 @@ public class MainActivity extends ActionBarActivity {
     {   
         if(username.getText().toString().equals("admin") && 
         		password.getText().toString().equals("admin"))
-	        {
-        	
-        	Toast.makeText(getApplicationContext(), "Redireionando...",Toast.LENGTH_SHORT).show();
-	        Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
-	    	MainActivity.this.startActivity(myIntent);
+        {
+	        Toast.makeText(getApplicationContext(), "Redirecionando...",Toast.LENGTH_SHORT).show();
+	        //Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
+	        Intent myIntent = new Intent(MainActivity.this, OfertasActivity.class);
+	    	
+			MainActivity.this.startActivity(myIntent);
 	    	finish();
 	    	
 	    	
