@@ -1,4 +1,7 @@
-package com.example.estagio;
+package com.persitirdados;
+import com.example.estagio.R;
+import com.example.estagio.R.string;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
