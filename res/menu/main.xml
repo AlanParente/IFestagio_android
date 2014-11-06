@@ -4,9 +4,22 @@
     tools:context="com.example.estagio.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/ofertasmenu"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        android:title="Ofertas"
+        app:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/historicomenu"
+        android:orderInCategory="100"
+        android:title="Histórico"
+        app:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/placeholdermenu"
+        android:orderInCategory="100"
+        android:title="Placeholder"
+        app:showAsAction="always">
+    </item>
 
 </menu>

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 public class PlaceholderFragment extends Fragment{
 	
+	public PlaceholderFragment(){}
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {

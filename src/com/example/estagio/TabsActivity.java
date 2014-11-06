@@ -1,90 +1,110 @@
 package com.example.estagio;
 
+import java.util.List;
+import java.util.Vector;
+
+import com.example.view.SlidingTabLayout;
+
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.view.Menu;
+import android.view.MenuItem;
 
+public class TabsActivity extends ActionBarActivity {
 
-public class TabsActivity extends ActionBarActivity implements 
-		ActionBar.TabListener {
-	
 	private ViewPager viewPager;
-    private TabsPagerAdapter mAdapter;
-    private ActionBar actionBar;
-    // Titulo das abas
-    private String[] tabs = { "Ofertas", "HistÛrico", "Placeholder" };
-    
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tabs);
-        
-     // InicializaÁ„o
-        viewPager = (ViewPager) findViewById(R.id.pager);
-        actionBar = getSupportActionBar();  
-        mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
-        
-        viewPager.setAdapter(mAdapter);
-        actionBar.setHomeButtonEnabled(false);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);     
-        
-     // Adicionando abas
-        for (String tab_name : tabs) {
-            actionBar.addTab(actionBar.newTab().setText(tab_name)
-                    .setTabListener(this));
-        }
-        
-        
-        /**
-         *swiping no viewpager: faz a respectiva aba ser selecionada
-         * */
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-         
-            @Override
-            public void onPageSelected(int position) {
-                // on changing the page
-                // make respected tab selected
-                actionBar.setSelectedNavigationItem(position);
-            }
-         
-            @Override
-            public void onPageScrolled(int arg0, float arg1, int arg2) {
-            }
-         
-            @Override
-            public void onPageScrollStateChanged(int arg0) {
-            }
-        });
-        
-    }
-    
-    @Override
+	// Titulo das abas
+	private List<String> tabs;
+	//Layout de abas deslizantes
+	private SlidingTabLayout slidingTabLayout;
+	//Adapter de Fragments
+	private static MyPagerAdapter adapter;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_tabs);
+		//Instancia e adiciona t√≠tulos das abas.
+		tabs = new Vector<String>();
+		tabs.add("Ofertas");
+		tabs.add("Hist√≥rico");
+		tabs.add("Placeholder");
+		viewPager = (ViewPager) findViewById(R.id.viewpager);
+		//Instancia o adapter utilizando o FragmentManager padr√£o.
+		adapter = new MyPagerAdapter(getSupportFragmentManager());
+		viewPager.setAdapter(adapter);
+		slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
+		slidingTabLayout.setViewPager(viewPager);
+
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		super.onCreateOptionsMenu(menu);
+		// getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-    
-	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		viewPager.setCurrentItem(tab.getPosition());
-		
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		return super.onOptionsItemSelected(item);
 	}
 
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-		
+	/**
+	 * Classe interna do adapter de fragments.
+	 * @author ruriel
+	 *
+	 */
+	public class MyPagerAdapter extends FragmentPagerAdapter {
+		private List<String> tabList;
+
+		public MyPagerAdapter(FragmentManager fm) {
+			super(fm);
+			tabList = tabs;
+			// TODO Auto-generated constructor stub
+		}
+
+		/**
+		 * Instancia a fragment de acordo com o item selecionado.
+		 */
+		@Override
+		public Fragment getItem(int arg0) {
+			Fragment fragment = null;
+			switch (arg0) {
+			case 0:
+				fragment = Fragment.instantiate(getBaseContext(),
+						OfertasFragment.class.getName());
+				break;
+			case 1:
+				fragment = Fragment.instantiate(getBaseContext(),
+						HistoricoFragment.class.getName());
+				break;
+			case 2:
+				fragment = Fragment.instantiate(getBaseContext(),
+						PlaceholderFragment.class.getName());
+				break;
+
+			}
+			return fragment;
+		}
+
+		@Override
+		public int getCount() {
+			return tabList.size();
+		}
+
+		@Override
+		public CharSequence getPageTitle(int position) {
+			return tabList.get(position).toUpperCase();
+
+		}
+
 	}
 
 }
