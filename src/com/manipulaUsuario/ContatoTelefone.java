@@ -5,12 +5,20 @@
  */
 package com.manipulaUsuario;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author Keylla
  */
+@Entity
+@Table ( name = "contato_telefone")
 public class ContatoTelefone {
+	@Column ( name = "id_contato" )
     int id_contato;
+	@Column ( name = "ds_telefone" )
     String desc_telefone;
 
     public int getId_contato() {
@@ -31,7 +39,7 @@ public class ContatoTelefone {
 
     @Override
     public String toString() {
-        return "ContatoTelefone{" + "id_contato=" + id_contato + ", desc_telefone=" + desc_telefone + '}';
+        return id_contato + ", " + desc_telefone;
     }
     
    

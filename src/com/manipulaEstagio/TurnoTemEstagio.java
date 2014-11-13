@@ -1,9 +1,18 @@
 package com.manipulaEstagio;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table ( name = "turno_has_estagio")
 public class TurnoTemEstagio {
 	
+	@Column ( name = "turno_id_turno" )
 	int id_turno;
+	@Column ( name = "estagio_id_estagio" )
 	int id_estagio;
+	
 	public int getId_turno() {
 		return id_turno;
 	}
@@ -18,8 +27,7 @@ public class TurnoTemEstagio {
 	}
 	@Override
 	public String toString() {
-		return "TurnoTemEstagio [id_turno=" + id_turno + ", id_estagio="
-				+ id_estagio + "]";
+		return  id_turno + ", "	+ id_estagio ;
 	}
 	
 	

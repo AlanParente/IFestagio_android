@@ -7,15 +7,24 @@ package com.manipulaUsuario;
 
 import java.sql.Blob;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 
 
 /**
  *
  * @author Keylla
  */
+@Entity
+@Table ( name = "cv")
 public class Curriculum {
+	@Column ( name = "id_cv" )
     int id_cv;
+	@Column ( name = "ds_cv" )
     String desc_cv;
+	@Column ( name = "cv" )
     Blob cv;
 
     public int getId_cv() {

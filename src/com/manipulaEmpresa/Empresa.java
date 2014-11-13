@@ -5,16 +5,28 @@
  */
 package com.manipulaEmpresa;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author Keylla
  */
+@Entity
+@Table( name= "empresa")
 public class Empresa {
+   @Column(name = "id_empresa")	
    private int id_empresa;
+   @Column(name = "cnpj")	
    private String cnpj;
+   @Column(name = "ds_empresa")	
    private String nome_empresa;
+   @Column(name = "endereco")	
    private String endereco;
+   @Column(name = "foco_atividade")	
    private String foco_atividade;
+   @Column(name = "site")
    private String site;
 
     public String getCnpj() {
@@ -67,7 +79,7 @@ public class Empresa {
 
     @Override
     public String toString() {
-        return "Empresa{" + "id_empresa=" + id_empresa + ", cnpj=" + cnpj + ", nome_empresa=" + nome_empresa + ", endereco=" + endereco + ", foco_atividade=" + foco_atividade + ", site=" + site + '}';
+        return id_empresa + "," + cnpj + "," + nome_empresa + "," + endereco + "," + foco_atividade + "," + site ;
     }
     
     

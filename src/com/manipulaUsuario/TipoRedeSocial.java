@@ -5,12 +5,20 @@
  */
 package com.manipulaUsuario;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author Keylla
  */
+@Entity
+@Table ( name = "tipo_rede_social")
 public class TipoRedeSocial {
+	@Column ( name = "id_tipo_rede_social" )
     int id_tipo_rede_social;
+	@Column ( name = "ds_tipo_rede_social" )
     String desc_tipo_rede_social;
 
     public int getId_tipo_rede_social() {
@@ -31,7 +39,7 @@ public class TipoRedeSocial {
 
     @Override
     public String toString() {
-        return "TipoRedeSocial{" + "id_tipo_rede_social=" + id_tipo_rede_social + ", desc_tipo_rede_social=" + desc_tipo_rede_social + '}';
+        return id_tipo_rede_social + ", " + desc_tipo_rede_social ;
     }
     
     

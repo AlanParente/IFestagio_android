@@ -2,16 +2,30 @@ package com.manipulaUsuario;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table ( name = "pessoa")
 public class Pessoa {
-	
+	@Column ( name = "id_pessoa" )
 	int id_pessoa;
+	@Column ( name = "contato_telefone_id_contato" )
 	int id_contato;
+	@Column ( name = "rede_social_id_rede_social" )
 	int id_rede_social;
+	@Column ( name = "nome" )
 	String nome;
+	@Column ( name = "sexo" )
 	char sexo;
+	@Column ( name = "cpf" )
 	int cpf;
+	@Column ( name = "email" )
 	String e_mail;
+	@Column ( name = "dt_nascimento" )
 	Date data_nascimento;
+	@Column ( name = "url_lattes" )
 	String url_lattes;
 	
 	
@@ -68,6 +82,14 @@ public class Pessoa {
 	}
 	public void setUrl_lattes(String url_lattes) {
 		this.url_lattes = url_lattes;
+	}
+	@Override
+	public String toString() {
+		return id_pessoa + "," + id_contato
+				+ ", " + id_rede_social + ", " + nome
+				+ ", " + sexo + ", " + cpf + ", " + e_mail
+				+ ", " + data_nascimento + ", "
+				+ url_lattes ;
 	}
 	
     

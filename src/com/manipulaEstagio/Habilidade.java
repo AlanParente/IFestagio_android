@@ -1,10 +1,19 @@
 package com.manipulaEstagio;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table ( name = "habilidade")
 public class Habilidade {
-	
+	@Column ( name = "id_habilidade")
 	int id_habilidade;
+	@Column ( name = "tipo_habilidade_id_tipo_habilidade")
 	int id_tipo_habilidade;
+	@Column ( name = "ds_habilidade")
 	String desc_habilidade;
+	
 	public int getId_habilidade() {
 		return id_habilidade;
 	}
@@ -25,9 +34,9 @@ public class Habilidade {
 	}
 	@Override
 	public String toString() {
-		return "Habilidade [id_habilidade=" + id_habilidade
-				+ ", id_tipo_habilidade=" + id_tipo_habilidade
-				+ ", desc_habilidade=" + desc_habilidade + "]";
+		return  id_habilidade
+				+ "," + id_tipo_habilidade
+				+ "," + desc_habilidade ;
 	}
 	
 	

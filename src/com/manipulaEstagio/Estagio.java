@@ -8,19 +8,34 @@ package com.manipulaEstagio;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author Keylla
  */
+@Entity
+@Table ( name = "estagio")
 public class Estagio {
+   @Column ( name = "id_estagio" )	
    private int id_estagio;
-   private int id_empresa;
+   @Column ( name = "contato_estagio_id_contato_estagio" )	
    private int id_contato_estagio;
+   @Column ( name = "empresa_id_empresa" )	
+   private int id_empresa;
+   @Column ( name = "ds_estagio" )	
    private String desc_estagio;
+   @Column ( name = "dt_inicio" )	
    private Date data_inicio;
+   @Column ( name = "dt_fim" )	
    private Date data_fim;
+   @Column ( name = "bolsa" )	
    private float valor_bolsa;
+   @Column ( name = "beneficios" )	
    private String beneficios;
+   @Column ( name = "ch_semanal" )	
    private int carga_horaria;
     
     public int getId_contato_estagio() {
@@ -96,9 +111,13 @@ public class Estagio {
         this.carga_horaria = carga_horaria;
     }
 
-    @Override
-    public String toString() {
-        return "Estagio{" + "id_estagio=" + id_estagio + ", id_empresa=" + id_empresa + ", id_contato_estagio=" + id_contato_estagio + ", desc_estagio=" + desc_estagio + ", data_inicio=" + data_inicio + ", data_fim=" + data_fim + ", valor_bolsa=" + valor_bolsa + ", beneficios=" + beneficios + ", carga_horaria=" + carga_horaria + '}';
-    }
-       
+	@Override
+	public String toString() {
+		return  id_estagio + ","+ id_contato_estagio + "," + id_empresa	+ "," + desc_estagio 
+				+ data_inicio + "," + data_fim + ","
+				+ valor_bolsa + "," + beneficios
+				+ "," + carga_horaria;
+	}
+
+     
 }

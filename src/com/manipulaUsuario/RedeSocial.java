@@ -4,15 +4,21 @@
  * and open the template in the editor.
  */
 package com.manipulaUsuario;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 /**
  *
  * @author Keylla
  */
+@Entity
+@Table ( name = "rede_social")
 public class RedeSocial {
-    
+	@Column ( name = "id_rede_social" )
     private int id_rede_social;
+	@Column ( name = "tipo_rede_social_id_tipo_rede_social" )
     private int id_tp_rede_social;
+	@Column ( name = "ds_rede_social" )
     private String des_rede_social;
 
     public int getId_rede_social() {
@@ -41,7 +47,7 @@ public class RedeSocial {
 
     @Override
     public String toString() {
-        return "RedeSocial{" + "id_rede_social=" + id_rede_social + ", id_tp_rede_social=" + id_tp_rede_social + ", des_rede_social=" + des_rede_social + '}';
+        return id_rede_social + ", " + id_tp_rede_social + ", " + des_rede_social;
     }
     
     

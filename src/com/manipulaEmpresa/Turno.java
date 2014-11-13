@@ -30,8 +30,7 @@ public class Turno {
 	}
 	@Override
 	public String toString() {
-		return "Turno [id_turno=" + id_turno + ", desc_turno=" + desc_turno
-				+ "]";
+		return id_turno + "," + desc_turno;
 	}
 	
 	

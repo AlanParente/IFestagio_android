@@ -5,18 +5,30 @@
  */
 package com.manipulaUsuario;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author Keylla
  */
+@Entity
+@Table ( name = "usuario")
 public class Usuario {
-	private int id_usuario;
+		@Column ( name = "id_usuario" )
+		private int id_usuario;
+		@Column ( name = "empresa_id_empresa" )
         private int id_empresa;
+		@Column ( name = "tipo_usuario_id_tipo_usuario" )
         private int id_tipo_usuario;
+		@Column ( name = "pessoa_id_pessoa" )
         private int id_pessoa;
+		@Column ( name = "senha" )
+		private String senha;
+		@Column ( name = "login" )
         private String login;
-	private String senha;
-        
+		
 
     public int getId_usuario() {
         return id_usuario;
@@ -76,7 +88,7 @@ public class Usuario {
 	
     @Override
     public String toString() {
-        return "Usuario{" + "id_usuario=" + id_usuario + ", id_empresa=" + id_empresa + ", id_tipo_usuario=" + id_tipo_usuario + ", id_pessoa=" + id_pessoa + ", login=" + login + ", senha=" + senha + '}';
+        return id_usuario + "," + id_empresa + ", " + id_tipo_usuario + ", " + id_pessoa + ", " + login + ", " + senha ;
     }
 	
 	

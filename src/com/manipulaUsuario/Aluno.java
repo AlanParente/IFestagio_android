@@ -1,12 +1,23 @@
 package com.manipulaUsuario;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table ( name = "aluno")
 public class Aluno {
-	
+	@Column ( name = "id_aluno" )
 	int id_aluno;
+	@Column ( name = "cv_id_cv" )
 	int id_cv;
+	@Column ( name = "pessoa_id_pessoa" )
 	int id_pessoa;
+	@Column ( name = "curso_id_curso" )
 	int id_curso;
+	@Column ( name = "matricula" )
 	int matricula;
+	
 	public int getId_aluno() {
 		return id_aluno;
 	}
@@ -40,9 +51,9 @@ public class Aluno {
 	
 	@Override
 	public String toString() {
-		return "Aluno [id_aluno=" + id_aluno + ", id_cv=" + id_cv
-				+ ", id_pessoa=" + id_pessoa + ", id_curso=" + id_curso
-				+ ", matricula=" + matricula + "]";
+		return id_aluno + ", " + id_cv
+				+ ", " + id_pessoa + ", " + id_curso
+				+ ", " + matricula ;
 	}
 	
 	

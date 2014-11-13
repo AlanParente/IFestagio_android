@@ -6,7 +6,7 @@
         android:id="@+id/icon"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:contentDescription="@string/image"
+        android:contentDescription="@+string/image"
         android:paddingLeft="10dp"
         android:paddingRight="10dp" />
  
