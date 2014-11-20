@@ -14,7 +14,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class TabsActivity extends ActionBarActivity   {
+public class TabsActivity extends ActionBarActivity {
 
 	private ViewPager viewPager;
 	// Titulo das abas
@@ -23,7 +23,7 @@ public class TabsActivity extends ActionBarActivity   {
 	private SlidingTabLayout slidingTabLayout;
 	//Adapter de Fragments
 	private static MyPagerAdapter adapter;
-
+	byte[] historico;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class TabsActivity extends ActionBarActivity   {
 		//Instancia e adiciona títulos das abas.
 		tabs = new Vector<String>();
 		tabs.add("Ofertas");
-		tabs.add("Hist�rico");
+		tabs.add("Hist\u00f3rico");
 		tabs.add("Placeholder");
 		viewPager = (ViewPager) findViewById(R.id.viewpager);
 		//Instancia o adapter utilizando o FragmentManager padrão.

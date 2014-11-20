@@ -1,5 +1,6 @@
 package com.example.estagio;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +18,7 @@ public class HistoricoFragment extends ListFragment{
 	 * 
 	 SUBSTITUIR POR CONSULTA NO BANCO
 	 
-	 REFERÊCIA PARA IMPLEMENTAÇÃO FUTURA:
+	 REFERï¿½CIA PARA IMPLEMENTAï¿½ï¿½O FUTURA:
 	 
 	 for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
     		String nome_empresa = c.getString(c.getColumnIndex(dba.KEY_NOME_EMPRESA));
@@ -67,9 +68,9 @@ public class HistoricoFragment extends ListFragment{
         for(int i=0;i<4;i++){
             HashMap<String, String> hm = new HashMap<String,String>();
             hm.put("titl", titles[i]);
-            hm.put("desc", "Remuneração: " + descriptions[i]);
-            hm.put("img", Integer.toString(images[i]) );
-            hm.put("hor", "Carga Horária: " + horas[i]);
+            hm.put("desc", "Remunera\u00e7\u00e3o: " + descriptions[i]);
+			hm.put("img", Integer.toString(images[i]) );
+            hm.put("hor", "Carga Hor\u00e1ria: " + horas[i]);
             aList.add(hm);
         }
  
