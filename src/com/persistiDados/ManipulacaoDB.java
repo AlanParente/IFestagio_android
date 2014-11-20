@@ -4,6 +4,8 @@ package com.persistiDados;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.manipulaUsuario.Usuario;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,8 +16,16 @@ public class ManipulacaoDB {
 	 
 	public ManipulacaoDB(Context context) {
 	 cdb = new CriaDataBase(context);
-     db = cdb.getDatabase();		  
+     db = cdb.getDatabase();     
 	}
+	
+	public void InseriUsuario (String json){
+		Usuario usuario;
+		ManipulaJsonUsuario mju = new ManipulaJsonUsuario();
+		usuario = mju.PopulaUsuario(json);
+		cdb.InsertDB(db, "usuario", usuario.toString());	
+	}
+	
 	
 	public List<String> buscaUsuario(String usu) {
 	    List<String> result = new ArrayList<String>();
@@ -28,7 +38,7 @@ public class ManipulacaoDB {
 	               null, 
 	               null);
 	    
-	    cursor.moveToFirst();
+	    cursor.moveToFirst(); 
 	    while(!cursor.isAfterLast()) {
 	      
 	      try{

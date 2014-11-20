@@ -5,6 +5,8 @@
  */
 package com.manipulaUsuario;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -15,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table ( name = "curso")
-public class Curso {
+public class Curso implements Serializable {
 	@Column ( name = "id_curso" )
     int id_curso;
 	@Column ( name = "ds_curso" )

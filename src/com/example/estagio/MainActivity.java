@@ -34,8 +34,8 @@ public class MainActivity extends Activity {
         		password.getText().toString().equals("admin"))
         {
 	        Toast.makeText(getApplicationContext(), "Redirecionando...",Toast.LENGTH_SHORT).show();
-	        Intent myIntent = new Intent(MainActivity.this, TabsActivity.class);
-	    	MainActivity.this.startActivity(myIntent);
+	        Intent myIntent = new Intent(this, TabsActivity.class);
+	    	startActivity(myIntent);
 	    	finish();
 	    	
 	    	

@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package com.manipulaUsuario;
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -13,7 +15,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table ( name = "rede_social")
-public class RedeSocial {
+public class RedeSocial implements Serializable{
 	@Column ( name = "id_rede_social" )
     private int id_rede_social;
 	@Column ( name = "tipo_rede_social_id_tipo_rede_social" )

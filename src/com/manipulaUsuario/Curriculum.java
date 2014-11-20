@@ -5,6 +5,7 @@
  */
 package com.manipulaUsuario;
 
+import java.io.Serializable;
 import java.sql.Blob;
 
 import javax.persistence.Column;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table ( name = "cv")
-public class Curriculum {
+public class Curriculum implements Serializable {
 	@Column ( name = "id_cv" )
     int id_cv;
 	@Column ( name = "ds_cv" )

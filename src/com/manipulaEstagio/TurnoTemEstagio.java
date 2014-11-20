@@ -1,12 +1,14 @@
 package com.manipulaEstagio;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table ( name = "turno_has_estagio")
-public class TurnoTemEstagio {
+public class TurnoTemEstagio implements Serializable{
 	
 	@Column ( name = "turno_id_turno" )
 	int id_turno;

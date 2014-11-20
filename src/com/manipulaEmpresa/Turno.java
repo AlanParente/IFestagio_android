@@ -1,5 +1,7 @@
 package com.manipulaEmpresa;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "turno")
-public class Turno {
+public class Turno implements Serializable{
 	@Column(name = "id_turno")
 	int id_turno;
 	@Column(name = "ds_turno")

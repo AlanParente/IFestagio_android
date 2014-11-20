@@ -6,6 +6,7 @@
 package com.manipulaEstagio;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,7 +19,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table ( name = "estagio")
-public class Estagio {
+public class Estagio implements Serializable{
    @Column ( name = "id_estagio" )	
    private int id_estagio;
    @Column ( name = "contato_estagio_id_contato_estagio" )	

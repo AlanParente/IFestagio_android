@@ -1,5 +1,6 @@
 package com.manipulaUsuario;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table ( name = "pessoa")
-public class Pessoa {
+public class Pessoa implements Serializable{
 	@Column ( name = "id_pessoa" )
 	int id_pessoa;
 	@Column ( name = "contato_telefone_id_contato" )

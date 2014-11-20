@@ -1,12 +1,14 @@
 package com.manipulaEstagio;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table ( name = "habilidade_estagio")
-public class HabilidadeEstagio {
+public class HabilidadeEstagio implements Serializable{
 	@Column ( name = "id_habilidade_estagio" )
 	int id_habilidade_estagio;
 	@Column ( name = "nivel_habilidade_id_nivel_habilidade" )

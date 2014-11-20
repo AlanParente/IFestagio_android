@@ -5,6 +5,8 @@
  */
 package com.manipulaEmpresa;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -15,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table( name= "empresa")
-public class Empresa {
+public class Empresa implements Serializable {
    @Column(name = "id_empresa")	
    private int id_empresa;
    @Column(name = "cnpj")	
